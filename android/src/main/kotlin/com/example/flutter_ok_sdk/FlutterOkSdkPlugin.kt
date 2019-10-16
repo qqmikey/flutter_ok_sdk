@@ -18,7 +18,7 @@ import ru.ok.android.sdk.OkListener
 import ru.ok.android.sdk.util.OkAuthType
 import ru.ok.android.sdk.util.OkScope
 
-class FlutterOkSdkPlugin : MethodCallHandler, PluginRegistry.ActivityResultListener{
+class FlutterOkSdkPlugin : MethodCallHandler, PluginRegistry.ActivityResultListener {
 
     internal var methodChannelResult: MethodChannel.Result? = null
 
@@ -101,4 +101,3 @@ class FlutterOkSdkPlugin : MethodCallHandler, PluginRegistry.ActivityResultListe
         return true
     }
 }
-
