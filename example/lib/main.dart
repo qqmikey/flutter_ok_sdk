@@ -12,28 +12,24 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  String _platformVersion = 'Unknown';
+  String token = '';
+  String secret = '';
 
   @override
   void initState() {
     super.initState();
   }
 
-  // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> initPlatformState() async {
-    String platformVersion;
-    // Platform messages may fail, so we use a try/catch PlatformException.
     try {
-      platformVersion = await FlutterOkSdk.login();
+      final okAuth = await FlutterOkSdk.login();
+      setState(() {
+        token = okAuth.token;
+        secret = okAuth.secret;
+      });
     } on PlatformException {
-      platformVersion = 'Failed to get platform version.';
+      print('PlatformException');
     }
-
-    if (!mounted) return;
-
-    setState(() {
-      _platformVersion = platformVersion;
-    });
   }
 
   @override
@@ -50,7 +46,12 @@ class _MyAppState extends State<MyApp> {
           ],
         ),
         body: Center(
-          child: Text('Running on: $_platformVersion\n'),
+          child: Column(
+            children: <Widget>[
+              Text('Token: $token'),
+              Text('Secret: $secret'),
+            ],
+          )
         ),
       ),
     );

@@ -3,6 +3,6 @@
 
 @implementation FlutterOkSdkPlugin
 + (void)registerWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar {
-  [SwiftFlutterOkSdkPlugin registerWithRegistrar:registrar];
+    [SwiftFlutterOkSdkPlugin registerWithRegistrar:registrar];
 }
 @end
