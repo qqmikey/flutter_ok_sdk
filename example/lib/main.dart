@@ -27,8 +27,8 @@ class _MyAppState extends State<MyApp> {
         token = okAuth.token;
         secret = okAuth.secret;
       });
-    } on PlatformException {
-      print('PlatformException');
+    } on PlatformException catch(e) {
+      print(e);
     }
   }
 

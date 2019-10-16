@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ok_sdk_app_id" translatable="false">1259574528</string>
+    <string name="ok_sdk_app_key" translatable="false">EA3FC589629C4FEB4E444DB2</string>
+    <string name="ok_redirect_url" translatable="false">ok1259574528://authorize</string>
+</resources>

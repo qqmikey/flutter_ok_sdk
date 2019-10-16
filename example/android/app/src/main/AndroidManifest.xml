@@ -29,5 +29,20 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <activity
+                android:name="ru.ok.android.sdk.OkAuthActivity"
+                android:theme="@style/LaunchTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                        android:host="ok{1259574528}"
+                        android:scheme="okauth" />
+            </intent-filter>
+        </activity>
     </application>
 </manifest>
