@@ -93,11 +93,9 @@ class FlutterOkSdkPlugin : MethodCallHandler, PluginRegistry.ActivityResultListe
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?): Boolean {
-        // TODO: check if needs super
-        // super.onActivityResult(requestCode, resultCode, data)
-        if (okLoginManager.onAuthActivityResult(requestCode, resultCode, data, okAuthCallback)) {
-            return true
+        if (::okLoginManager.isInitialized) {
+            return okLoginManager.onAuthActivityResult(requestCode, resultCode, data, okAuthCallback)
         }
-        return true
+        return false
     }
 }
